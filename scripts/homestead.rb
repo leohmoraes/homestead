@@ -207,7 +207,7 @@ class Homestead
     if settings.has_key?("variables")
       settings["variables"].each do |var|
         config.vm.provision "shell" do |s|
-          s.inline = "echo \"\nenv[$1] = '$2'\" >> /etc/php/7.0/fpm/php-fpm.conf"
+          s.inline = "echo \"\nenv[$1] = '$2'\" >> /etc/php/php5-fpm.conf"
           s.args = [var["key"], var["value"]]
         end
 
@@ -218,7 +218,7 @@ class Homestead
       end
 
       config.vm.provision "shell" do |s|
-        s.inline = "service php7.0-fpm restart"
+        s.inline = "service php5-fpm restart"
       end
     end
 
