@@ -48,8 +48,9 @@ block="server {
         deny all;
     }
 
-    ssl_certificate     /etc/nginx/ssl/$1.crt;
-    ssl_certificate_key /etc/nginx/ssl/$1.key;
+    #when more domain in homestead has occured a error 'certificate mismatch'
+    #ssl_certificate     /etc/nginx/ssl/$1.crt;
+    #ssl_certificate_key /etc/nginx/ssl/$1.key;
 }
 "
 
